@@ -1,0 +1,63 @@
+.group {
+  margin-bottom: 28px;
+}
+.label {
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mute);
+  font-weight: 650;
+  margin-bottom: 12px;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+.chip {
+  min-height: 44px;
+  padding: 0 18px;
+  border-radius: 999px;
+  border: 1.5px solid var(--line);
+  background: var(--card);
+  color: var(--ink);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 650;
+  cursor: pointer;
+}
+.chip:hover {
+  border-color: var(--ink);
+}
+.chipOn {
+  background: var(--ink);
+  color: #fff;
+  border-color: var(--ink);
+}
+.swatch {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 0;
+  padding: 5px;
+  background: transparent;
+  cursor: pointer;
+  box-shadow: 0 0 0 1.5px var(--line) inset;
+}
+.swatchOn {
+  box-shadow: 0 0 0 2.5px var(--ink) inset;
+}
+.dot {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.dotOriginal {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, #15171b 0 25%, #c98b8b 0 50%, #3a9ad9 0 75%, #fff 0);
+}

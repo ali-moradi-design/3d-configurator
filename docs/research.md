@@ -6,10 +6,10 @@ All checked on 2026-10-22. Screenshots are in `docs/research/`, mockups in `docs
 
 Run at `https://pmndrs.github.io/examples/<slug>`; no console errors in headless Chromium.
 
-| Example | What we take | Screenshot |
-| --- | --- | --- |
-| `t-shirt-configurator` | hero → customizer flow, color swatches, PNG download button | `research/t-shirt-configurator-1.png`, `-2-customizer.png` |
-| `shoe-configurator` | click a part, color picker, floating product with soft shadow | `research/shoe-configurator-1.png`, `-2-click-part.png` |
+| Example                | What we take                                                  | Screenshot                                                 |
+| ---------------------- | ------------------------------------------------------------- | ---------------------------------------------------------- |
+| `t-shirt-configurator` | hero → customizer flow, color swatches, PNG download button   | `research/t-shirt-configurator-1.png`, `-2-customizer.png` |
+| `shoe-configurator`    | click a part, color picker, floating product with soft shadow | `research/shoe-configurator-1.png`, `-2-click-part.png`    |
 
 Their shirt and shoe models have no credit and will NOT be shipped.
 

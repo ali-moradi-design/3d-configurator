@@ -1,0 +1,71 @@
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  align-items: center;
+  gap: 40px;
+  padding-block: 24px 80px;
+}
+.title {
+  font-size: clamp(48px, 7vw, 92px);
+  line-height: 0.95;
+  letter-spacing: -0.045em;
+  font-weight: 800;
+  margin: 20px 0 0;
+}
+.lead {
+  font-size: 19px;
+  line-height: 1.5;
+  color: var(--mute);
+  margin: 28px 0 36px;
+  max-width: 460px;
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.stats {
+  display: flex;
+  gap: 40px;
+  margin: 52px 0 0;
+}
+.stats div {
+  display: flex;
+  flex-direction: column-reverse;
+  font-size: 13px;
+  color: var(--mute);
+}
+.stats dd {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--ink);
+}
+.stats dt {
+  margin: 0;
+}
+.card {
+  border-radius: 48px;
+  background: var(--stage);
+  padding: 12px;
+  overflow: hidden;
+}
+.card img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding-bottom: 56px;
+  }
+  .card {
+    border-radius: 32px;
+    order: -1;
+  }
+  .stats {
+    gap: 28px;
+    margin-top: 36px;
+  }
+}

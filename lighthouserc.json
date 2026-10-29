@@ -1,16 +1,18 @@
 {
   "ci": {
     "collect": {
-      "staticDistDir": "./out",
       "numberOfRuns": 1,
       "settings": {
         "chromeFlags": "--no-sandbox --use-gl=angle --use-angle=swiftshader --enable-unsafe-swiftshader"
-      }
+      },
+      "startServerCommand": "node scripts/serve.mjs 3000",
+      "startServerReadyPattern": "standalone server",
+      "url": ["http://127.0.0.1:3000/"]
     },
     "assert": {
       "assertMatrix": [
         {
-          "matchingUrlPattern": "index\\.html$",
+          "matchingUrlPattern": ".*",
           "assertions": {
             "categories:accessibility": [
               "error",

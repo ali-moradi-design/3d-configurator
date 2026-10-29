@@ -29,7 +29,8 @@ Only the common part and the `3d-configurator` section are kept.
   `model/gltf-binary` with long cache headers (roadmap rule).
 - Quality: Playwright E2E (page loads, main interaction works, no console
   errors) + axe on the HTML parts; Lighthouse check in CI; one required check.
-- Deploy: roadmap phase 7 (rsync to `/srv/static/<repo>`).
+- Deploy: changed on 2026-10-29 to a Next.js standalone container (roadmap decision for every
+  Next.js site); see the README.
 - How each session starts:
   1. Check prerequisites: `git`, `node` (LTS), `pnpm`, Playwright runs; the
      folder is a clean clone of that repo; GitHub access.

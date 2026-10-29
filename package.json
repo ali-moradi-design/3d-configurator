@@ -5,12 +5,12 @@
   "type": "module",
   "packageManager": "pnpm@10.28.0",
   "engines": {
-    "node": ">=22"
+    "node": ">=24"
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "pnpm dlx http-server out -p 3000 -c-1 --silent",
+    "build": "next build && node scripts/standalone.mjs",
+    "start": "node scripts/serve.mjs 3000",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "format": "prettier --write .",

@@ -8,7 +8,7 @@ Part of a portfolio of 3D landing pages. Demo: `3d-configurator.ali-moradi-devel
 
 ## Stack
 
-Next.js 16 (App Router, static export), React 19, TypeScript strict, pnpm,
+Next.js 16 (App Router, standalone server in a container), React 19, TypeScript strict, pnpm,
 React Three Fiber + drei, zustand, ESLint + Prettier, Feature-Sliced Design checked with Steiger,
 Playwright + axe, Lighthouse CI.
 
@@ -17,7 +17,7 @@ Playwright + axe, Lighthouse CI.
 ```bash
 pnpm install
 pnpm dev            # development
-pnpm build && pnpm start   # static export served from ./out on :3000
+pnpm build && pnpm start   # the standalone server on :3000, like production
 ```
 
 ## Checks (the same ones CI runs)
@@ -45,7 +45,16 @@ pnpm exec lhci autorun
   Mobile uses a lower pixel ratio. `prefers-reduced-motion` stops rotation and floating.
 - Posters are rendered from the real scene: `pnpm build && pnpm start`, then
   `node scripts/make-posters.mjs`.
-- `deploy/nginx.conf` serves `.glb` as `model/gltf-binary` with long cache headers.
+- `next.config.ts` serves `.glb` as `model/gltf-binary` and the HDRI as `image/vnd.radiance`, with a
+  one-year immutable cache (also for posters).
+
+## Deploy
+
+`output: 'standalone'`: CI builds `.next/standalone` and `Dockerfile` puts only that folder in the image.
+After CI passes on `main`, `.github/workflows/docker.yml` pushes
+`ghcr.io/ali-moradi-design/3d-configurator-web:<sha>` and deploy-kit makes the VPS pull and restart it.
+`deploy/compose.yaml` is the server file (port `127.0.0.1:3116`, read-only, 256 MB) and
+`deploy/nginx.conf` the host Nginx site (also gzips the model and the HDRI).
 
 ## Credits and licenses
 
